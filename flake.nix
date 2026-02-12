@@ -31,7 +31,7 @@
             inherit name;
             value = prev.${name}.override {
               packageOverrides = pfinal: pprev: {
-                corner = (prev.corner.override { arviz = null; });
+                corner = (pprev.corner.override { arviz = null; });
                 fortranformat = pfinal.callPackage ./fortranformat.nix { };
                 freeqdsk = pfinal.callPackage ./freeqdsk.nix { };
                 indica = pfinal.callPackage ./indica.nix { };
