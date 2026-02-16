@@ -1,12 +1,11 @@
 {
   stdenv,
   python3,
-  qtbase,
-  qtwayland,
-  wrapQtAppsHook,
-  useQt6 ? false,
   vtk,
   vtkWithQt6,
+  libsForQt5,
+  qt6Packages,
+  useQt6 ? false,
   ...
 }:
 let
@@ -27,13 +26,11 @@ stdenv.mkDerivation {
   src = pythonWithCalcam.out;
   buildInputs = [
     pythonWithCalcam.pkgs.calcam
-    qtbase
-    qtwayland
+    (if useQt6 then qt6Packages else libsForQt5).qtbase
+    (if useQt6 then qt6Packages else libsForQt5).qtwayland
   ]
   ++ (if useQt6 then [ vtkWithQt6 ] else [ vtk ]);
-  nativeBuildInputs = [
-    wrapQtAppsHook
-  ];
+  nativeBuildInputs = [ (if useQt6 then qt6Packages else libsForQt5).wrapQtAppsHook ];
   installPhase = ''
     mkdir -p $out/
     cp -R * $out/
