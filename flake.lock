@@ -23,18 +23,17 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1771415296,
-        "narHash": "sha256-Z6pb/DivDJD8nW9g2oUrvVPPNG+rh4ZnR/0wM+Rt8r4=",
-        "ref": "refs/heads/main",
-        "rev": "c53b468b58aa0d2a91328b71db83cccf5802c277",
-        "shallow": true,
-        "type": "git",
-        "url": "ssh://git@git.ccfe.ac.uk/elitherl/imas.nix"
+        "lastModified": 1771420852,
+        "narHash": "sha256-/RCrR8n5q3iAb3MV1zP+pwGopn8zrc3gP6LnLNL0R/Y=",
+        "owner": "pixelifytica",
+        "repo": "imas.nix",
+        "rev": "69e12736894d5d37ae13142aca37743a89585169",
+        "type": "github"
       },
       "original": {
-        "shallow": true,
-        "type": "git",
-        "url": "ssh://git@git.ccfe.ac.uk/elitherl/imas.nix"
+        "owner": "pixelifytica",
+        "repo": "imas.nix",
+        "type": "github"
       }
     },
     "nixpkgs": {

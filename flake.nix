@@ -1,7 +1,7 @@
 {
   description = "Personal collection of Python packages that aren't in nixpkgs";
   inputs = {
-    imas-nix.url = "git+ssh://git@git.ccfe.ac.uk/elitherl/imas.nix?shallow=1";
+    imas-nix.url = "github:pixelifytica/imas.nix";
     calcam.url = "github:pixelifytica/calcam.nix";
     sal.url = "github:pixelifytica/simple-access-layer";
   };
