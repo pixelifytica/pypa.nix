@@ -23,10 +23,10 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1771337468,
-        "narHash": "sha256-vWRG78CyeWzV2CMzSTeOwceC5jQbyA3dnXy8mr9hvB8=",
+        "lastModified": 1771415296,
+        "narHash": "sha256-Z6pb/DivDJD8nW9g2oUrvVPPNG+rh4ZnR/0wM+Rt8r4=",
         "ref": "refs/heads/main",
-        "rev": "10d0d8ae92b1f020d4cf9f183cd587c76d8a94ee",
+        "rev": "c53b468b58aa0d2a91328b71db83cccf5802c277",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@git.ccfe.ac.uk/elitherl/imas.nix"
