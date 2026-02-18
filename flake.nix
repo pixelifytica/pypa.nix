@@ -1,23 +1,12 @@
 {
   description = "Collection of Python packages that aren't in nixpkgs";
   inputs = {
-    imas-nix = {
-      url = "git+ssh://git@git.ccfe.ac.uk/elitherl/imas.nix?shallow=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    calcam = {
-      url = "github:pixelifytica/calcam.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    sal = {
-      url = "github:pixelifytica/simple-access-layer";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    imas-nix.url = "git+ssh://git@git.ccfe.ac.uk/elitherl/imas.nix?shallow=1";
+    calcam.url = "github:pixelifytica/calcam.nix";
+    sal.url = "github:pixelifytica/simple-access-layer";
   };
   outputs =
     {
-      self,
-      nixpkgs,
       imas-nix,
       calcam,
       sal,
