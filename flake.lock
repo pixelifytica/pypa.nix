@@ -1,12 +1,53 @@
 {
   "nodes": {
+    "calcam": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1771336525,
+        "narHash": "sha256-Gha7EgbM39rgwcV0GCUjjKrwHIiGmWpNHYrEXcxDtn0=",
+        "owner": "pixelifytica",
+        "repo": "calcam.nix",
+        "rev": "bb5c27dff541594aacc367c0a5a5ee22bee3e2c0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pixelifytica",
+        "repo": "calcam.nix",
+        "type": "github"
+      }
+    },
+    "imas-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1771337468,
+        "narHash": "sha256-vWRG78CyeWzV2CMzSTeOwceC5jQbyA3dnXy8mr9hvB8=",
+        "ref": "refs/heads/main",
+        "rev": "10d0d8ae92b1f020d4cf9f183cd587c76d8a94ee",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@git.ccfe.ac.uk/elitherl/imas.nix"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@git.ccfe.ac.uk/elitherl/imas.nix"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1770843696,
-        "narHash": "sha256-LovWTGDwXhkfCOmbgLVA10bvsi/P8eDDpRudgk68HA8=",
+        "lastModified": 1771177547,
+        "narHash": "sha256-trTtk3WTOHz7hSw89xIIvahkgoFJYQ0G43IlqprFoMA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2343bbb58f99267223bc2aac4fc9ea301a155a16",
+        "rev": "ac055f38c798b0d87695240c7b761b82fc7e5bc2",
         "type": "github"
       },
       "original": {
@@ -16,7 +57,30 @@
     },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "calcam": "calcam",
+        "imas-nix": "imas-nix",
+        "nixpkgs": "nixpkgs",
+        "sal": "sal"
+      }
+    },
+    "sal": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1771344956,
+        "narHash": "sha256-8MWVa8IDkXS2LN8SBr2zNkDyPqCYgfYk+fXJy1QSYdY=",
+        "owner": "pixelifytica",
+        "repo": "simple-access-layer",
+        "rev": "91c9257d9bebd193febb36e975738ca818151b86",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pixelifytica",
+        "repo": "simple-access-layer",
+        "type": "github"
       }
     }
   },
