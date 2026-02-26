@@ -2,15 +2,37 @@
   buildPythonPackage,
   fetchFromGitHub,
   poetry-core,
+  corner,
   pandas,
+  hydra-core,
+  prov,
   netcdf4,
   numpy,
+  mpmath,
   scipy,
   xarray,
   matplotlib,
+  sal,
+  emcee,
+  # dime_sampler,
+  flatdict,
+  bottleneck,
+  tqdm,
+  scikit-learn,
+  scikit-optimize,
   pyyaml,
+  pint,
+  gitpython,
   periodictable,
   freeqdsk,
+  click,
+  coverage,
+  hypothesis,
+  mypy,
+  pytest,
+  pytest-cov,
+  pytest-xdist,
+  types-setuptools,
   ...
 }:
 buildPythonPackage rec {
@@ -27,16 +49,41 @@ buildPythonPackage rec {
     poetry-core
   ];
   dependencies = [
+    corner
     pandas
+    hydra-core
+    prov
     netcdf4
     numpy
+    mpmath
     scipy
     xarray
     matplotlib
+    sal
+    emcee
+    # dime_sampler
+    flatdict
+    bottleneck
+    tqdm
+    scikit-learn
+    scikit-optimize
     pyyaml
+    pint
+    gitpython
     periodictable
     freeqdsk
   ];
-  doChecks = false;
+  nativeCheckInputs = [
+    click
+    corner
+    coverage
+    hypothesis
+    mypy
+    pytest
+    pytest-cov
+    pytest-xdist
+    types-setuptools
+  ];
+  doChecks = true;
   dontCheckRuntimeDeps = true;
 }
