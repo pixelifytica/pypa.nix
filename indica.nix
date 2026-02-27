@@ -14,7 +14,7 @@
   matplotlib,
   sal,
   emcee,
-  # dime_sampler,
+  dime-sampler,
   flatdict,
   bottleneck,
   tqdm,
@@ -61,7 +61,7 @@ buildPythonPackage rec {
     matplotlib
     sal
     emcee
-    # dime_sampler
+    dime-sampler
     flatdict
     bottleneck
     tqdm
