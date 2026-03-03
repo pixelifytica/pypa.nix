@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1771336525,
-        "narHash": "sha256-Gha7EgbM39rgwcV0GCUjjKrwHIiGmWpNHYrEXcxDtn0=",
+        "lastModified": 1772523218,
+        "narHash": "sha256-tJqud9UKGACDDtxAS4q7OddJLGaHfxVPFBP0q5OaEoU=",
         "owner": "pixelifytica",
         "repo": "calcam.nix",
-        "rev": "bb5c27dff541594aacc367c0a5a5ee22bee3e2c0",
+        "rev": "74dcdd18330ac8a1b1523c2121338bc59d473892",
         "type": "github"
       },
       "original": {
@@ -42,11 +42,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1772100494,
-        "narHash": "sha256-IUEtLflgwGKLa27isBRpEN+flkoO15Wu05vp0sHF0Ok=",
+        "lastModified": 1772499948,
+        "narHash": "sha256-KHr9T1aGVdroSVSNjfOh9EmnM+dfAbylr6JBw3masKg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b7ab35426966d3a57a48d3d09608bb9fca15fdd2",
+        "rev": "b61d32a1f33af124b5a2a12ad4da26cd7f06c23d",
         "type": "github"
       },
       "original": {
