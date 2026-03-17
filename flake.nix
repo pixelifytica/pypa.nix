@@ -42,6 +42,7 @@
             ++ [
               (pfinal: pprev: {
                 corner = (pprev.corner.override { arviz = null; });
+                crayon = pfinal.callPackage ./crayon.nix { };
                 dime-sampler = pfinal.callPackage ./dime-sampler.nix { };
                 fortranformat = pfinal.callPackage ./fortranformat.nix { };
                 freeqdsk = pfinal.callPackage ./freeqdsk.nix { };
@@ -57,6 +58,7 @@
       );
       packages.${system} = {
         inherit (pkgs.python3Packages)
+          crayon
           dime-sampler
           fortranformat
           freeqdsk
