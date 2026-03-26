@@ -51,6 +51,7 @@
                 midas-fusion = pfinal.callPackage ./midas-fusion.nix { };
                 pyswarms = pfinal.callPackage ./pyswarms.nix { };
                 scikit-optimize = pfinal.callPackage ./skopt.nix { };
+                schwimmbad = pfinal.callPackage ./schwimmbad.nix { };
                 tokamesh = pfinal.callPackage ./tokamesh.nix { };
               })
             ];
@@ -67,6 +68,7 @@
           midas-fusion
           pyswarms
           scikit-optimize
+          schwimmbad
           tokamesh
           ;
       };
