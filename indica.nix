@@ -37,13 +37,13 @@
 }:
 buildPythonPackage rec {
   pname = "indica";
-  version = "0.1.22";
+  version = "0.1.24";
   pyproject = true;
   src = fetchFromGitHub {
     owner = "indica-mcf";
     repo = "indica";
     rev = "v${version}";
-    hash = "sha256-v48DlhDf1OslIKdvoqu5XzFT65MpMowMtI+TbeLyxSE=";
+    hash = "sha256-3JUFRPojYpdjqBqyXk/3Z8RuFvUAdTFAYcOjNjL14nQ=";
   };
   build-system = [
     poetry-core
@@ -86,4 +86,5 @@ buildPythonPackage rec {
   ];
   doChecks = true;
   dontCheckRuntimeDeps = true;
+  patches = [ ./indica.patch ];
 }

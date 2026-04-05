@@ -1,0 +1,67 @@
+diff --git a/indica/equilibrium.py b/indica/equilibrium.py
+index 77c0ebf8..b647c747 100644
+--- a/indica/equilibrium.py
++++ b/indica/equilibrium.py
+@@ -366,11 +366,11 @@ class Equilibrium:
+         )
+         R_grid = R0 + minor_rads * np.cos(theta)
+         z_grid = z0 + minor_rads * np.sin(theta)
+-        fluxes_samples = reference_rhos.indica.interp2d(
++        fluxes_samples = reference_rhos.interp(
+             R=R_grid,
+             z=z_grid,
+             zero_coords={"R": R0, "z": z0},
+-            method="cubic",
++            method="pchip",
+             assume_sorted=True,
+         ).rename("rhop")
+         fluxes_samples.loc[{"r": 0}] = 0.0
+diff --git a/indica/operators/atomic_data.py b/indica/operators/atomic_data.py
+index 7978d064..fd14c835 100644
+--- a/indica/operators/atomic_data.py
++++ b/indica/operators/atomic_data.py
+@@ -67,25 +67,25 @@ class FractionalAbundance(Operator):
+ 
+         self.Ne, self.Te = Ne, Te  # type: ignore
+ 
+-        scd_spec = self.scd.indica.interp2d(
++        scd_spec = self.scd.interp(
+             electron_temperature=Te,
+             electron_density=Ne,
+-            method="cubic",
++            method="pchip",
+             assume_sorted=True,
+         )
+ 
+-        acd_spec = self.acd.indica.interp2d(
++        acd_spec = self.acd.interp(
+             electron_temperature=Te,
+             electron_density=Ne,
+-            method="cubic",
++            method="pchip",
+             assume_sorted=True,
+         )
+ 
+         if self.ccd is not None:
+-            ccd_spec = self.ccd.indica.interp2d(
++            ccd_spec = self.ccd.interp(
+                 electron_temperature=Te,
+                 electron_density=Ne,
+-                method="cubic",
++                method="pchip",
+                 assume_sorted=True,
+             )
+         else:
+diff --git a/indica/plasma.py b/indica/plasma.py
+index 707a7d97..7f72fba5 100644
+--- a/indica/plasma.py
++++ b/indica/plasma.py
+@@ -80,7 +80,7 @@ class Plasma:
+         self.z = format_coord(np.linspace(z0, z1, n_z), "z")
+ 
+         index = np.arange(n_R)
+-        R_midplane = np.linspace(self.R.min(), self.R.max(), n_R)
++        R_midplane = np.linspace(self.R.min().data, self.R.max().data, n_R)
+         z_midplane = np.full_like(R_midplane, 0.0)
+         coords_midplane = {"index": index}
+         self.R_midplane = format_dataarray(R_midplane, "R_midplane", coords_midplane)
