@@ -1,36 +1,17 @@
 {
   description = "Personal collection of Python packages that aren't in nixpkgs";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-25.11";
-    imas-nix = {
-      url = "github:pixelifytica/imas.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    calcam = {
-      url = "github:pixelifytica/calcam.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    sal = {
-      url = "github:pixelifytica/simple-access-layer";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    imas-nix.url = "github:pixelifytica/imas.nix";
+    calcam.url = "github:pixelifytica/calcam.nix";
+    sal.url = "github:pixelifytica/simple-access-layer";
   };
   outputs =
     {
-      self,
-      nixpkgs,
       imas-nix,
       calcam,
       sal,
       ...
     }:
-    let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        overlays = [ self.overlays.default ];
-      };
-    in
     {
       overlays.default = (
         final: prev: {
@@ -41,7 +22,6 @@
             ++ (sal.overlays.default final prev).pythonPackagesExtensions
             ++ [
               (pfinal: pprev: {
-                corner = (pprev.corner.override { arviz = null; });
                 crayon = pfinal.callPackage ./crayon.nix { };
                 dime-sampler = pfinal.callPackage ./dime-sampler.nix { };
                 fortranformat = pfinal.callPackage ./fortranformat.nix { };
@@ -57,20 +37,5 @@
             ];
         }
       );
-      packages.${system} = {
-        inherit (pkgs.python3Packages)
-          crayon
-          dime-sampler
-          fortranformat
-          freeqdsk
-          indica
-          inference-tools
-          midas-fusion
-          pyswarms
-          scikit-optimize
-          schwimmbad
-          tokamesh
-          ;
-      };
     };
 }
