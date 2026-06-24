@@ -2,7 +2,6 @@
   buildPythonPackage,
   fetchFromGitHub,
   poetry-core,
-  corner,
   pandas,
   hydra-core,
   prov,
@@ -49,7 +48,6 @@ buildPythonPackage rec {
     poetry-core
   ];
   dependencies = [
-    corner
     pandas
     hydra-core
     prov
@@ -75,7 +73,6 @@ buildPythonPackage rec {
   ];
   nativeCheckInputs = [
     click
-    corner
     coverage
     hypothesis
     mypy
